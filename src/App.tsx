@@ -24,7 +24,6 @@ export default function App() {
 		<div className="root">
 			<h1>Les fiançailles et le mariage</h1>
 			<div className="content">
-				<div className="scroller">
 					<div className="header">
 						<button disabled={shown === 0} onClick={onPrevious}><img src={ArrowBackwards} alt="Précédent" /></button>
 						<h2>{shown === 0 ? "Les fiançailles" : "Le mariage"}</h2>
@@ -68,30 +67,28 @@ export default function App() {
 							</>}
 						</section>
 						<section className="mariage">
+							<img src={RingsIcon} alt="Alliances"/>
 							<p>
 								Le mariage en Suisse unit officiellement une femme et un homme, soumis à des conditions
 								telles que la majorité légale, la capacité de discernement, l'absence de mariage préexistant,
 								et l'évitement des liens de parenté rapprochés.
 							</p>
-							<div className="section">
-								<img src={RingsIcon} alt="Alliances"/>
-								<div className="selector">
-									<button
-										onClick={() => setMarriedMenu(0)}
-										className={currentMarriedMenu === 0 ? "active" : ""}>
-										Promesse
-									</button>
-									<button
-										onClick={() => setMarriedMenu(1)}
-										className={currentMarriedMenu === 1 ? "active" : ""}>
-										Échange des consentements
-									</button>
-									<button
-										onClick={() => setMarriedMenu(2)}
-										className={currentMarriedMenu === 2 ? "active" : ""}>
-										Annulation
-									</button>
-								</div>
+							<div className="selector">
+								<button
+									onClick={() => setMarriedMenu(0)}
+									className={currentMarriedMenu === 0 ? "active" : ""}>
+									Promesse
+								</button>
+								<button
+									onClick={() => setMarriedMenu(1)}
+									className={currentMarriedMenu === 1 ? "active" : ""}>
+									Échange des consentements
+								</button>
+								<button
+									onClick={() => setMarriedMenu(2)}
+									className={currentMarriedMenu === 2 ? "active" : ""}>
+									Annulation
+								</button>
 							</div>
 							{
 								currentMarriedMenu === 0 ? <>
@@ -121,7 +118,6 @@ export default function App() {
 							}
 						</section>
 					</div>
-				</div>
 			</div>
 		</div>
 	);
